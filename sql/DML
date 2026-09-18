@@ -1,0 +1,68 @@
+USE EcommerceDB;
+
+-- Customer
+INSERT INTO Customer VALUES
+(1, 'Seshu', 'seshu@gmail.com', '9876543210'),
+(2, 'Deepika', 'deepika@gmail.com', '9876543211'),
+(3, 'Anusha', 'anusha@gmail.com', '9876543212');
+
+-- Address
+INSERT INTO Address VALUES
+(101, 1, 'Kakinada', 'Andhra Pradesh', '533001'),
+(102, 2, 'Vijayawada', 'Andhra Pradesh', '520001'),
+(103, 3, 'Hyderabad', 'Telangana', '500001');
+
+-- Category
+INSERT INTO Category VALUES
+(1, 'Electronics'),
+(2, 'Clothing'),
+(3, 'Books');
+
+-- Product
+INSERT INTO Product VALUES
+(201, 1, 'Smartphone', 15000.00, 20, 'Android smartphone'),
+(202, 1, 'Laptop', 55000.00, 10, 'Business laptop'),
+(203, 2, 'T-Shirt', 799.00, 30, 'Cotton T-Shirt'),
+(204, 3, 'DBMS Book', 599.00, 15, 'Database textbook');
+
+-- Cart
+INSERT INTO Cart VALUES
+(301, 1, DEFAULT),
+(302, 2, DEFAULT),
+(303, 3, DEFAULT);
+
+-- Cart Item
+INSERT INTO Cart_Item VALUES
+(401, 301, 201, 2),
+(402, 302, 203, 1),
+(403, 303, 204, 2);
+
+-- Orders
+INSERT INTO Orders VALUES
+(501, 1, DEFAULT, 30000.00, DEFAULT),
+(502, 2, DEFAULT, 799.00, 'Confirmed'),
+(503, 3, DEFAULT, 1198.00, 'Pending');
+
+-- Order Item
+INSERT INTO Order_Item VALUES
+(601, 501, 201, 2, 15000.00),
+(602, 502, 203, 1, 799.00),
+(603, 503, 204, 2, 599.00);
+
+-- Payment
+INSERT INTO Payment VALUES
+(701, 501, 'UPI', 'Paid', DEFAULT),
+(702, 502, 'Card', 'Paid', DEFAULT),
+(703, 503, 'Cash', DEFAULT, DEFAULT);
+
+-- Delivery
+INSERT INTO Delivery VALUES
+(801, 501, 'Kakinada, Andhra Pradesh', 'Delivered', DEFAULT),
+(802, 502, 'Vijayawada, Andhra Pradesh', 'Shipped', DEFAULT),
+(803, 503, 'Hyderabad, Telangana', DEFAULT, NULL);
+
+-- Review
+INSERT INTO Review VALUES
+(901, 1, 201, 5, 'Very good product'),
+(902, 2, 203, 4, 'Good quality'),
+(903, 3, 204, 5, 'Useful book');
