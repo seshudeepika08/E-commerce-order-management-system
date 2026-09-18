@@ -1,0 +1,28 @@
+SELECT * FROM Customer;
+SELECT * FROM Product;
+SELECT * FROM Category;
+SELECT * FROM Orders;
+SELECT product_id, product_name, price
+FROM Product
+WHERE price > 1000;
+SELECT product_name, stock_quantity
+FROM Product
+WHERE stock_quantity > 0;
+SELECT c.name, o.order_id, o.total_amount, o.status
+FROM Customer c
+JOIN Orders o
+ON c.customer_id = o.customer_id;
+SELECT p.product_name, c.category_name
+FROM Product p
+JOIN Category c
+ON p.category_id = c.category_id;
+SELECT COUNT(*) AS total_orders
+FROM Orders;
+SELECT SUM(total_amount) AS total_sales
+FROM Orders;
+SELECT AVG(total_amount) AS average_order
+FROM Orders;
+SELECT * FROM Payment
+WHERE payment_status = 'Paid';
+SELECT * FROM Orders
+WHERE status = 'Delivered';
